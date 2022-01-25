@@ -47,3 +47,9 @@ jobs:
         with:
           name: firmware
           path: SHIELD_NAME_BOARD_NAME.uf2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            SHIELD_NAME_BOARD_NAME.uf2
