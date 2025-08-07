@@ -1,6 +1,0 @@
-/ {
-  chosen {
-    /delete-property/     zephyr,console;
-    /delete-property/     zephyr,shell-uart;
-  };
-};
