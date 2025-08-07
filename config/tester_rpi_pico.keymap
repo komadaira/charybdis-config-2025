@@ -5,7 +5,7 @@
 //  };
 //};
 
-/*&uart0 { status = "enabled"; };
+&uart0 { status = "disabled"; };
 
 &code_partition {
     reg = <0x100 (DT_SIZE_M(2) - 0x100 - DT_SIZE_K(512))>;
@@ -18,13 +18,7 @@
             read-only;
         };
     };
-};*/
-
-&code_partition {
-    reg = <0x100 (DT_SIZE_M(2) - 0x100)>;
 };
-
-/delete-node/ &storage_partition;
 
 
 #include <behaviors.dtsi>
