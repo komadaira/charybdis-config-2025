@@ -1,9 +1,9 @@
-/ {
-  chosen {
-    /delete-property/     zephyr,console;
-    /delete-property/     zephyr,shell-uart;
-  };
-};
+/// {
+//  chosen {
+//    /delete-property/     zephyr,console;
+//    /delete-property/     zephyr,shell-uart;
+//  };
+//};
 
 /*&uart0 { status = "enabled"; };
 
