@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    # ZMK公式リポジトリの場所を定義
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    # Charybdisのシールド定義があるリポジトリの場所を定義
+    - name: bastardkb
+      url-base: https://github.com/bastardkb
+  projects:
+    # 1. ZMK本体を公式リポジトリから持ってくるよう指示
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    # 2. Charybdisのシールド定義をbastardkbリポジトリから持ってくるよう指示
+    - name: charybdis
+      remote: bastardkb
+      revision: main
+  # 3. このリポジトリ自体（あなたのキーマップなど）もビルドに含めるよう指示
+  self:
+    path: config
