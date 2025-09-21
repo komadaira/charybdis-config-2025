@@ -1,9 +1,0 @@
-on: [push, pull_request, workflow_dispatch]
-
-jobs:
-  build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      # ボードとシールドをJSON形式ではなく、スペース区切りで指定します
-      board: nice_nano_v2
-      shield: charybdis_left charybdis_right
