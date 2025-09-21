@@ -1,21 +1,10 @@
-# This file generates the GitHub Actions matrix
-# For simple board + shield combinations, add them
-# to the top level board and shield arrays, for more
-# control, add individual board + shield combinations to
-# the `include` property, e.g:
-#
-# board: [ "nice_nano_v2" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
-#     shield: reviung41
-#
----
-include:
-  - board: nice_nano_v2
-    shield: charybdis
-  - board: nice_nano_v2
-    shield: charybdis
-  - board: nice_nano_v2
-    shield: settings_reset
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      # ビルド対象のマイコンボード（カンマ区切りで複数指定も可能）
+      board: '["nice_nano_v2"]'
+      # ビルド対象のシールド（左右それぞれを指定）
+      shield: '["charybdis_left", "charybdis_right"]'
