@@ -3,20 +3,3 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      # The name of this repository, e.g. "zmk-config-sofle"
-      # This will be used as the artifact name.
-      # You can remove this if you're not using a custom name.
-      config_repo_name: "my-charybdis-config"
-      # The branch of this repository to checkout.
-      # You can remove this if you want to use the default branch.
-      config_repo_branch: "main"
-      # A list of boards to build for, separated by commas.
-      # This is required if you're not using a build.yaml file.
-      # e.g. "nice_nano_v2, reviung41"
-      board: "nice_nano_v2, nice_nano_v2"
-      # A list of shields to build for, separated by commas.
-      # The number of shields must match the number of boards.
-      # This is required if you're not using a build.yaml file.
-      # e.g. "sofle_left, sofle_right"
-      shield: "charybdis, charybdis"
